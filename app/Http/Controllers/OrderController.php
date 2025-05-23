@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+use App\Models\Pizza;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -20,24 +21,37 @@ class OrderController extends Controller
                         ->orderBy('created_at', 'desc')
                         ->get();
 
+        // Get all current pizzas for display data
+        $currentPizzas = Pizza::all()->keyBy('id');
+
         return Inertia::render('Orders/History', [
-            'orders' => $orders->map(function ($order) {
+            'orders' => $orders->map(function ($order) use ($currentPizzas) {
                 $decodedPizzas = json_decode($order->pizzas, true);
                 $processedPizzas = [];
                 if (is_array($decodedPizzas)) {
                     foreach ($decodedPizzas as $pizzaItem) {
+                        // Get current pizza data for display (images, current name, etc.)
+                        $currentPizza = null;
+                        if (isset($pizzaItem['pizza']['id']) && $currentPizzas->has($pizzaItem['pizza']['id'])) {
+                            $currentPizza = $currentPizzas->get($pizzaItem['pizza']['id']);
+                        }
+
                         // Ensure 'pizza' key exists and has defaults
                         if (!isset($pizzaItem['pizza']) || !is_array($pizzaItem['pizza'])) {
-                            $pizzaItem['pizza'] = ['name' => 'Unknown Pizza', 'price' => 0.0];
+                            $pizzaItem['pizza'] = ['name' => 'Unknown Pizza', 'price' => 0.0, 'image_url' => null];
                         } else {
+                            // Use historical data for name and price (what was actually ordered)
                             if (!isset($pizzaItem['pizza']['name'])) {
-                                $pizzaItem['pizza']['name'] = 'Unknown Pizza';
+                                $pizzaItem['pizza']['name'] = $currentPizza ? $currentPizza->name : 'Unknown Pizza';
                             }
                             if (!isset($pizzaItem['pizza']['price'])) {
                                 $pizzaItem['pizza']['price'] = 0.0;
                             } else {
                                 $pizzaItem['pizza']['price'] = (float)$pizzaItem['pizza']['price'];
                             }
+                            
+                            // Always use current image for display consistency
+                            $pizzaItem['pizza']['image_url'] = $currentPizza ? $currentPizza->image_url : null;
                         }
 
                         // Ensure selected ingredient prices are float and ingredients have names
