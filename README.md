@@ -1,66 +1,270 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🍕 Pizza Shop Ordering System
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A full-featured pizza ordering system built with Laravel and Vue.js, featuring real-time pizza customization, shopping cart functionality, and order management.
 
-## About Laravel
+## ✨ Features
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### 🛒 Customer Features
+- **Pizza Catalog**: Browse through a variety of pizzas with detailed descriptions and pricing
+- **Real-time Customization**: Add or remove ingredients with live price updates
+- **Shopping Cart**: Add multiple pizzas with different customizations
+- **Order Checkout**: Secure order placement with detailed order summaries
+- **Order History**: View past orders with full customization details
+- **User Authentication**: Secure login and registration system
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### 🎯 Core Functionality
+- **Dynamic Pricing**: Automatic price calculation based on base pizza price and selected ingredients
+- **Ingredient Management**: Comprehensive ingredient system with individual pricing
+- **Order Tracking**: Order status management (pending, processing, completed, cancelled)
+- **Responsive Design**: Mobile-friendly interface with modern UI/UX
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 🚀 Technology Stack
 
-## Learning Laravel
+- **Backend**: Laravel 10.x
+- **Frontend**: Vue.js 3 with Inertia.js
+- **Database**: MySQL
+- **Authentication**: Laravel Breeze
+- **Styling**: Tailwind CSS
+- **Build Tool**: Vite
+- **Development Server**: PHP built-in server
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 📦 Installation
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### Prerequisites
+- PHP 8.1 or higher
+- Composer
+- Node.js & npm
+- MySQL
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Setup Steps
 
-## Laravel Sponsors
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd Shop
+   ```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+2. **Install PHP dependencies**
+   ```bash
+   composer install
+   ```
 
-### Premium Partners
+3. **Install Node.js dependencies**
+   ```bash
+   npm install
+   ```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+4. **Environment setup**
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
 
-## Contributing
+5. **Configure database**
+   Update your `.env` file with database credentials:
+   ```env
+   DB_CONNECTION=mysql
+   DB_HOST=127.0.0.1
+   DB_PORT=3306
+   DB_DATABASE=your_database_name
+   DB_USERNAME=your_username
+   DB_PASSWORD=your_password
+   ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+6. **Run migrations and seed data**
+   ```bash
+   php artisan migrate
+   php artisan db:seed
+   ```
 
-## Code of Conduct
+7. **Start development servers**
+   ```bash
+   # Terminal 1: Laravel backend
+   php artisan serve
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+   # Terminal 2: Vite development server
+   npm run dev
+   ```
 
-## Security Vulnerabilities
+8. **Access the application**
+   Open your browser and navigate to `http://localhost:8000`
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## 🗄️ Database Schema
 
-## License
+### Main Tables
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+- **users**: User authentication and profile data
+- **pizzas**: Pizza catalog with base prices and descriptions
+- **ingredients**: Available ingredients with individual pricing
+- **orders**: Customer orders with status tracking
+- **ingredient_pizza**: Pivot table for pizza-ingredient relationships
+
+### Key Relationships
+
+- User hasMany Orders
+- Order belongsTo User
+- Pizza belongsToMany Ingredients
+- Ingredient belongsToMany Pizzas
+
+## 🛣️ API Endpoints
+
+### Web Routes (Protected by Auth)
+```
+GET    /pizzas           - View pizza catalog
+GET    /cart             - View shopping cart
+POST   /orders           - Create new order
+GET    /orders           - View order history
+```
+
+### API Routes
+```
+GET    /api/pizzas       - Get all pizzas (JSON)
+```
+
+## 📁 Project Structure
+
+```
+├── app/
+│   ├── Http/Controllers/
+│   │   ├── PizzaController.php      # Pizza catalog management
+│   │   ├── OrderController.php      # Order processing
+│   │   └── CartController.php       # Shopping cart views
+│   └── Models/
+│       ├── User.php                 # User model
+│       ├── Pizza.php                # Pizza model with ingredients
+│       ├── Ingredient.php           # Ingredient model
+│       └── Order.php                # Order model
+├── resources/
+│   ├── js/
+│   │   ├── Components/
+│   │   │   └── PizzaCard.vue        # Pizza display component
+│   │   ├── Pages/
+│   │   │   ├── Pizzas/Index.vue     # Pizza catalog page
+│   │   │   ├── Cart/Index.vue       # Shopping cart page
+│   │   │   └── Orders/History.vue   # Order history page
+│   │   └── Store/
+│   │       └── cartStore.js         # Shopping cart state management
+│   └── views/                       # Blade templates
+├── database/
+│   ├── migrations/                  # Database migrations
+│   └── seeders/                     # Database seeders
+└── routes/
+    ├── web.php                      # Web routes
+    └── api.php                      # API routes
+```
+
+## 🎮 Usage
+
+### For Customers
+
+1. **Register/Login**: Create an account or login to existing account
+2. **Browse Pizzas**: View available pizzas on the catalog page
+3. **Customize Pizza**: Click "Customize" to modify ingredients
+4. **Add to Cart**: Add customized pizzas to your shopping cart
+5. **Checkout**: Review your order and complete the purchase
+6. **Track Orders**: View your order history and status
+
+### For Developers
+
+1. **Add New Pizzas**: Use the `PizzaSeeder` or create via database
+2. **Manage Ingredients**: Add ingredients via `IngredientSeeder`
+3. **Customize UI**: Modify Vue components in `resources/js/`
+4. **Extend Features**: Add new controllers and routes as needed
+
+## 🔧 Key Features Implementation
+
+### Pizza Customization
+- Real-time price calculation using Vue.js reactivity
+- Ingredient selection with visual feedback
+- Modal-based customization interface
+
+### Shopping Cart
+- Client-side state management with Vue reactivity
+- Support for multiple customized pizzas
+- Unique cart line identification for different customizations
+
+### Order Management
+- JSON storage of order details including customizations
+- Comprehensive order history with ingredient details
+- Order status tracking system
+
+## 🎨 Customization
+
+### Adding New Pizza Types
+1. Add pizza data via `PizzaSeeder` or database
+2. Associate with ingredients in `IngredientSeeder`
+3. Update placeholder images as needed
+
+### Modifying Ingredients
+1. Update `IngredientSeeder` with new ingredients
+2. Run `php artisan db:seed --class=IngredientSeeder`
+3. Ingredients automatically appear in customization modal
+
+### UI Customization
+- Modify Tailwind classes in Vue components
+- Update component styles in `resources/js/Components/`
+- Customize layout in `resources/js/Layouts/`
+
+## 🧪 Testing
+
+Run the application tests:
+```bash
+php artisan test
+```
+
+## 🚀 Deployment
+
+For production deployment:
+
+1. **Environment setup**
+   ```bash
+   php artisan config:cache
+   php artisan route:cache
+   php artisan view:cache
+   ```
+
+2. **Build assets**
+   ```bash
+   npm run build
+   ```
+
+3. **Set appropriate permissions**
+   ```bash
+   chmod -R 775 storage bootstrap/cache
+   ```
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/new-feature`)
+3. Commit your changes (`git commit -am 'Add new feature'`)
+4. Push to the branch (`git push origin feature/new-feature`)
+5. Create a Pull Request
+
+## 📝 License
+
+This project is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## 🆘 Support
+
+If you encounter any issues or have questions:
+
+1. Check the Laravel documentation: https://laravel.com/docs
+2. Check the Vue.js documentation: https://vuejs.org/
+3. Review the Inertia.js documentation: https://inertiajs.com/
+4. Open an issue in this repository
+
+## 🎯 Future Enhancements
+
+- [ ] Payment gateway integration
+- [ ] Real-time order tracking
+- [ ] Admin dashboard for order management
+- [ ] Email notifications
+- [ ] Pizza reviews and ratings
+- [ ] Delivery tracking
+- [ ] Loyalty program
+- [ ] Multi-language support
+
+---
+
+**Built with ❤️ using Laravel and Vue.js**
