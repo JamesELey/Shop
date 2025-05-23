@@ -21,37 +21,37 @@ class PizzaSeeder extends Seeder
                 'name' => 'Margherita',
                 'description' => 'Classic Italian pizza with fresh mozzarella, tomato sauce, and fresh basil leaves',
                 'price' => 10.99,
-                'image_url' => 'https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?w=400&h=300&fit=crop&crop=center',
+                'image_url' => 'https://picsum.photos/400/300?random=1',
             ],
             [
                 'name' => 'Pepperoni',
                 'description' => 'America\'s favorite with spicy pepperoni slices and melted mozzarella cheese',
                 'price' => 12.99,
-                'image_url' => 'https://images.unsplash.com/photo-1628840042765-356cda07504e?w=400&h=300&fit=crop&crop=center',
+                'image_url' => 'https://picsum.photos/400/300?random=2',
             ],
             [
                 'name' => 'Vegetarian',
                 'description' => 'Garden fresh vegetables including bell peppers, mushrooms, onions, and black olives',
                 'price' => 11.99,
-                'image_url' => 'https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=400&h=300&fit=crop&crop=center',
+                'image_url' => 'https://picsum.photos/400/300?random=3',
             ],
             [
                 'name' => 'Hawaiian',
                 'description' => 'Tropical delight with ham, pineapple chunks, and mozzarella cheese',
                 'price' => 13.49,
-                'image_url' => 'https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=400&h=300&fit=crop&crop=center',
+                'image_url' => 'https://picsum.photos/400/300?random=4',
             ],
             [
                 'name' => 'Meat Lovers',
                 'description' => 'Ultimate meat feast with pepperoni, sausage, ham, and bacon',
                 'price' => 15.99,
-                'image_url' => 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&h=300&fit=crop&crop=center',
+                'image_url' => 'https://picsum.photos/400/300?random=5',
             ],
             [
                 'name' => 'BBQ Chicken',
                 'description' => 'Grilled chicken with BBQ sauce, red onions, and cilantro',
                 'price' => 14.49,
-                'image_url' => 'https://images.unsplash.com/photo-1571997478779-2adcbbe9ab2f?w=400&h=300&fit=crop&crop=center',
+                'image_url' => 'https://picsum.photos/400/300?random=6',
             ]
         ];
 

@@ -1,8 +1,22 @@
 <template>
     <div class="bg-white dark:bg-gray-700 shadow-lg rounded-lg overflow-hidden flex flex-col">
-        <img v-if="pizza.image_url" :src="pizza.image_url" :alt="pizza.name" class="w-full h-48 object-cover">
-        <div v-else class="w-full h-48 bg-gray-200 dark:bg-gray-600 flex items-center justify-center">
-            <span class="text-gray-500 dark:text-gray-400">No Image</span>
+        <div class="w-full h-48 bg-gray-200 dark:bg-gray-600 flex items-center justify-center relative">
+            <img 
+                v-if="pizza.image_url && !imageError" 
+                :src="pizza.image_url" 
+                :alt="pizza.name" 
+                @load="imageLoaded = true"
+                @error="handleImageError"
+                class="w-full h-48 object-cover"
+                :class="{ 'opacity-0': !imageLoaded }"
+            >
+            <div v-if="!pizza.image_url || imageError" class="flex flex-col items-center justify-center text-center p-4">
+                <div class="text-6xl mb-2">🍕</div>
+                <span class="text-gray-500 dark:text-gray-400 text-sm">{{ pizza.name }}</span>
+            </div>
+            <div v-if="pizza.image_url && !imageLoaded && !imageError" class="absolute inset-0 flex items-center justify-center">
+                <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500"></div>
+            </div>
         </div>
         <div class="p-4 flex flex-col flex-grow">
             <h3 class="text-xl font-semibold text-gray-800 dark:text-white">{{ pizza.name }}</h3>
@@ -75,6 +89,10 @@ const props = defineProps({
 
 const emit = defineEmits(['add-to-cart']);
 
+// Image loading states
+const imageLoaded = ref(false);
+const imageError = ref(false);
+
 const showCustomizeModal = ref(false);
 // For the modal's independent selection state
 const selectedIngredientsInModal = ref([]); 
@@ -85,6 +103,11 @@ const modalPrice = ref(0);
 const currentPrice = ref(props.pizza.price_with_defaults);
 // currentSelectedIngredients on the card, reflects applied customizations or defaults
 const currentSelectedIngredients = ref(JSON.parse(JSON.stringify(props.pizza.default_ingredients || [])));
+
+function handleImageError() {
+    imageError.value = true;
+    imageLoaded.value = false;
+}
 
 function calculatePriceFromSelection(basePrice, ingredientsSelection) {
     let price = parseFloat(basePrice);
@@ -106,6 +129,9 @@ onMounted(() => {
 watch(() => props.pizza, (newPizza) => {
     currentPrice.value = parseFloat(newPizza.price_with_defaults);
     currentSelectedIngredients.value = JSON.parse(JSON.stringify(newPizza.default_ingredients || []));
+    // Reset image states when pizza changes
+    imageLoaded.value = false;
+    imageError.value = false;
 }, { deep: true });
 
 function openCustomizeModal() {
