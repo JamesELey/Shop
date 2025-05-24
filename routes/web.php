@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PizzaController;
+use App\Http\Controllers\FoodController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\OrderController;
 use Illuminate\Foundation\Application;
@@ -37,7 +38,15 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
+    // New food system routes
+    Route::get('/menu', [FoodController::class, 'index'])->name('menu.index');
+    Route::get('/menu/{category}', [FoodController::class, 'category'])->name('menu.category');
+    Route::get('/menu/{category}/{foodItem}', [FoodController::class, 'show'])->name('menu.show');
+    
+    // Legacy pizza routes (for backward compatibility)
     Route::get('/pizzas', [PizzaController::class, 'index'])->name('pizzas.index');
+    
+    // Cart and orders
     Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
     Route::post('/orders', [OrderController::class, 'store'])->name('orders.store');
     Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');

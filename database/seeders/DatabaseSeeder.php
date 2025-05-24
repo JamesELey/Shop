@@ -20,8 +20,12 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         $this->call([
-            PizzaSeeder::class,
-            IngredientSeeder::class,
+            CategorySeeder::class,
+            FoodItemSeeder::class,
+            FoodItemIngredientSeeder::class,
+            // Keep old seeders for backward compatibility if needed
+            // PizzaSeeder::class,
+            // IngredientSeeder::class,
         ]);
     }
 }
