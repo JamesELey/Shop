@@ -28,7 +28,7 @@ class FoodItemSeeder extends Seeder
                     'name' => 'Margherita',
                     'description' => 'Classic Italian pizza with fresh mozzarella, tomato sauce, and fresh basil leaves',
                     'price' => 10.99,
-                    'image_url' => 'https://picsum.photos/400/300?random=1',
+                    'image_url' => 'https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?w=400&h=300&fit=crop&auto=format',
                     'is_available' => true,
                     'is_featured' => true,
                     'dietary_info' => ['vegetarian']
@@ -38,7 +38,7 @@ class FoodItemSeeder extends Seeder
                     'name' => 'Pepperoni',
                     'description' => 'America\'s favorite with spicy pepperoni slices and melted mozzarella cheese',
                     'price' => 12.99,
-                    'image_url' => 'https://picsum.photos/400/300?random=2',
+                    'image_url' => 'https://images.unsplash.com/photo-1628840042765-356cda07504e?w=400&h=300&fit=crop&auto=format',
                     'is_available' => true,
                     'is_featured' => true,
                     'dietary_info' => []
@@ -48,7 +48,7 @@ class FoodItemSeeder extends Seeder
                     'name' => 'Vegetarian',
                     'description' => 'Garden fresh vegetables including bell peppers, mushrooms, onions, and black olives',
                     'price' => 11.99,
-                    'image_url' => 'https://picsum.photos/400/300?random=3',
+                    'image_url' => 'https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=400&h=300&fit=crop&auto=format',
                     'is_available' => true,
                     'is_featured' => false,
                     'dietary_info' => ['vegetarian']
@@ -58,7 +58,7 @@ class FoodItemSeeder extends Seeder
                     'name' => 'Hawaiian',
                     'description' => 'Tropical delight with ham, pineapple chunks, and mozzarella cheese',
                     'price' => 13.49,
-                    'image_url' => 'https://picsum.photos/400/300?random=4',
+                    'image_url' => 'https://images.unsplash.com/photo-1576458088443-04a19d13da0c?w=400&h=300&fit=crop&auto=format',
                     'is_available' => true,
                     'is_featured' => false,
                     'dietary_info' => []
@@ -68,7 +68,7 @@ class FoodItemSeeder extends Seeder
                     'name' => 'Meat Lovers',
                     'description' => 'Ultimate meat feast with pepperoni, sausage, ham, and bacon',
                     'price' => 15.99,
-                    'image_url' => 'https://picsum.photos/400/300?random=5',
+                    'image_url' => 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&h=300&fit=crop&auto=format',
                     'is_available' => true,
                     'is_featured' => true,
                     'dietary_info' => []
@@ -78,7 +78,7 @@ class FoodItemSeeder extends Seeder
                     'name' => 'BBQ Chicken',
                     'description' => 'Grilled chicken with BBQ sauce, red onions, and cilantro',
                     'price' => 14.49,
-                    'image_url' => 'https://picsum.photos/400/300?random=6',
+                    'image_url' => 'https://images.unsplash.com/photo-1571997478779-2adcbbe9ab2f?w=400&h=300&fit=crop&auto=format',
                     'is_available' => true,
                     'is_featured' => false,
                     'dietary_info' => []
@@ -100,7 +100,7 @@ class FoodItemSeeder extends Seeder
                     'name' => 'Classic Cheeseburger',
                     'description' => 'Juicy beef patty with cheddar cheese, lettuce, tomato, and special sauce',
                     'price' => 12.99,
-                    'image_url' => 'https://picsum.photos/400/300?random=20',
+                    'image_url' => 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&h=300&fit=crop&auto=format',
                     'is_available' => true,
                     'is_featured' => true,
                     'dietary_info' => []
@@ -110,7 +110,7 @@ class FoodItemSeeder extends Seeder
                     'name' => 'Bacon BBQ Burger',
                     'description' => 'Beef patty with crispy bacon, BBQ sauce, onion rings, and cheddar cheese',
                     'price' => 15.49,
-                    'image_url' => 'https://picsum.photos/400/300?random=21',
+                    'image_url' => 'https://images.unsplash.com/photo-1553979459-d2229ba7433a?w=400&h=300&fit=crop&auto=format',
                     'is_available' => true,
                     'is_featured' => true,
                     'dietary_info' => []
@@ -120,7 +120,7 @@ class FoodItemSeeder extends Seeder
                     'name' => 'Veggie Burger',
                     'description' => 'Plant-based patty with avocado, sprouts, tomato, and herb mayo',
                     'price' => 11.99,
-                    'image_url' => 'https://picsum.photos/400/300?random=22',
+                    'image_url' => 'https://images.unsplash.com/photo-1525059696034-4967a729002e?w=400&h=300&fit=crop&auto=format',
                     'is_available' => true,
                     'is_featured' => false,
                     'dietary_info' => ['vegetarian', 'vegan']
@@ -130,7 +130,7 @@ class FoodItemSeeder extends Seeder
                     'name' => 'Spicy Chicken Burger',
                     'description' => 'Crispy chicken breast with spicy mayo, jalapeños, and pepper jack cheese',
                     'price' => 13.99,
-                    'image_url' => 'https://picsum.photos/400/300?random=23',
+                    'image_url' => 'https://images.unsplash.com/photo-1606755962773-d324e614eaff?w=400&h=300&fit=crop&auto=format',
                     'is_available' => true,
                     'is_featured' => false,
                     'dietary_info' => []
@@ -152,7 +152,7 @@ class FoodItemSeeder extends Seeder
                     'name' => 'Spaghetti Carbonara',
                     'description' => 'Classic Italian pasta with eggs, cheese, pancetta, and black pepper',
                     'price' => 14.99,
-                    'image_url' => 'https://picsum.photos/400/300?random=30',
+                    'image_url' => 'https://images.unsplash.com/photo-1551892374-ecf8754cf8b0?w=400&h=300&fit=crop&auto=format',
                     'is_available' => true,
                     'is_featured' => true,
                     'dietary_info' => []
@@ -162,7 +162,7 @@ class FoodItemSeeder extends Seeder
                     'name' => 'Fettuccine Alfredo',
                     'description' => 'Rich and creamy fettuccine pasta with parmesan cheese and butter sauce',
                     'price' => 13.49,
-                    'image_url' => 'https://picsum.photos/400/300?random=31',
+                    'image_url' => 'https://images.unsplash.com/photo-1645112411341-6c4fd023714a?w=400&h=300&fit=crop&auto=format',
                     'is_available' => true,
                     'is_featured' => true,
                     'dietary_info' => ['vegetarian']
@@ -172,7 +172,7 @@ class FoodItemSeeder extends Seeder
                     'name' => 'Penne Arrabbiata',
                     'description' => 'Spicy penne pasta with tomatoes, garlic, red chilies, and fresh basil',
                     'price' => 12.99,
-                    'image_url' => 'https://picsum.photos/400/300?random=32',
+                    'image_url' => 'https://images.unsplash.com/photo-1585325701165-bc351c1fd325?w=400&h=300&fit=crop&auto=format',
                     'is_available' => true,
                     'is_featured' => false,
                     'dietary_info' => ['vegetarian', 'vegan']
@@ -182,7 +182,7 @@ class FoodItemSeeder extends Seeder
                     'name' => 'Chicken Pesto Pasta',
                     'description' => 'Grilled chicken with basil pesto, sun-dried tomatoes, and parmesan',
                     'price' => 16.49,
-                    'image_url' => 'https://picsum.photos/400/300?random=33',
+                    'image_url' => 'https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=400&h=300&fit=crop&auto=format',
                     'is_available' => true,
                     'is_featured' => false,
                     'dietary_info' => []
@@ -204,7 +204,7 @@ class FoodItemSeeder extends Seeder
                     'name' => 'Caesar Salad',
                     'description' => 'Crisp romaine lettuce with parmesan cheese, croutons, and Caesar dressing',
                     'price' => 9.99,
-                    'image_url' => 'https://picsum.photos/400/300?random=40',
+                    'image_url' => 'https://images.unsplash.com/photo-1546793665-c74683f339c1?w=400&h=300&fit=crop&auto=format',
                     'is_available' => true,
                     'is_featured' => true,
                     'dietary_info' => ['vegetarian']
@@ -214,7 +214,7 @@ class FoodItemSeeder extends Seeder
                     'name' => 'Greek Salad',
                     'description' => 'Mixed greens with feta cheese, olives, tomatoes, and Mediterranean dressing',
                     'price' => 11.49,
-                    'image_url' => 'https://picsum.photos/400/300?random=41',
+                    'image_url' => 'https://images.unsplash.com/photo-1540420773420-3366772f4999?w=400&h=300&fit=crop&auto=format',
                     'is_available' => true,
                     'is_featured' => true,
                     'dietary_info' => ['vegetarian']
@@ -224,7 +224,7 @@ class FoodItemSeeder extends Seeder
                     'name' => 'Grilled Chicken Salad',
                     'description' => 'Mixed greens with grilled chicken, avocado, cherry tomatoes, and ranch dressing',
                     'price' => 13.99,
-                    'image_url' => 'https://picsum.photos/400/300?random=42',
+                    'image_url' => 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=300&fit=crop&auto=format',
                     'is_available' => true,
                     'is_featured' => false,
                     'dietary_info' => []
@@ -234,7 +234,7 @@ class FoodItemSeeder extends Seeder
                     'name' => 'Quinoa Power Bowl',
                     'description' => 'Quinoa with roasted vegetables, chickpeas, avocado, and tahini dressing',
                     'price' => 12.99,
-                    'image_url' => 'https://picsum.photos/400/300?random=43',
+                    'image_url' => 'https://images.unsplash.com/photo-1512058564366-18510be2db19?w=400&h=300&fit=crop&auto=format',
                     'is_available' => true,
                     'is_featured' => false,
                     'dietary_info' => ['vegetarian', 'vegan', 'gluten-free']
