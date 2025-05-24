@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import ApplicationLogo from '@/Components/ApplicationLogo.vue';
 import Dropdown from '@/Components/Dropdown.vue';
 import DropdownLink from '@/Components/DropdownLink.vue';
@@ -9,6 +9,11 @@ import { Link } from '@inertiajs/vue3';
 import { cart } from '@/Store/cartStore';
 
 const showingNavigationDropdown = ref(false);
+
+// Initialize cart when layout mounts
+onMounted(() => {
+    cart.init();
+});
 </script>
 
 <template>
@@ -32,6 +37,9 @@ const showingNavigationDropdown = ref(false);
                             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                                 <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
                                     Dashboard
+                                </NavLink>
+                                <NavLink :href="route('menu.index')" :active="route().current('menu.*')">
+                                    Menu
                                 </NavLink>
                                 <NavLink :href="route('pizzas.index')" :active="route().current('pizzas.index')">
                                     Pizzas
@@ -131,6 +139,9 @@ const showingNavigationDropdown = ref(false);
                     <div class="pt-2 pb-3 space-y-1">
                         <ResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">
                             Dashboard
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink :href="route('menu.index')" :active="route().current('menu.*')">
+                            Menu
                         </ResponsiveNavLink>
                         <ResponsiveNavLink :href="route('pizzas.index')" :active="route().current('pizzas.index')">
                             Pizzas

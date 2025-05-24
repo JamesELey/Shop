@@ -20,8 +20,18 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         $this->call([
+            // New food system (includes category-specific ingredients)
+            CategorySeeder::class,
+            FoodItemSeeder::class,
+            FoodItemIngredientSeeder::class,
+            
+            // Legacy pizza system (for backward compatibility)
+            // Note: PizzaSeeder and PizzaIngredientSeeder use the ingredients created by FoodItemIngredientSeeder
             PizzaSeeder::class,
-            IngredientSeeder::class,
+            PizzaIngredientSeeder::class,
+            
+            // Skip legacy IngredientSeeder to avoid conflicts
+            // IngredientSeeder::class,
         ]);
     }
 }
